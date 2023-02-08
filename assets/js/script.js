@@ -15,3 +15,16 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// My code
+
+function generatePassword() {
+  //Generated password initially blank
+  var generatePassword = "";
+  var passwordLength;
+  var includeLowerCase;
+  var includeUpperCase;
+  var includeNumbers;
+  var includeSpecialChar;
+
+}
