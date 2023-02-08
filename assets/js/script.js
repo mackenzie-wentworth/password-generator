@@ -17,6 +17,11 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // My code
+var promptMessage = "Do you want to include";
+var promptInput = "characters? Please enter Y or N:";
+var minPasswordLength = 8;
+var maxPasswordLength = 128;
+var noSelectedCharAlert = "Invalid password. Please select that the password contains at least one lowercase, uppercase, numeric, or special character.";
 
 function generatePassword() {
   //Generated password initially blank
