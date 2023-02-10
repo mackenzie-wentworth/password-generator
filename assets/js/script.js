@@ -32,6 +32,17 @@ function generatePassword() {
   var includeNumbers;
   var includeSpecialChar;
 
+    // call functions to collect prompts
+    passwordLength = getPasswordLengthChoice();
+    includeLowerCase = getIncludeLowerCaseChoice();
+    includeUpperCase = getIncludeUpperCaseChoice();
+    includeNumbers = getIncludeNumbersChoice();
+    includeSpecialChar = getIncludeSpecialCharChoice();
+
+      if(passwordLength != minPasswordLength || passwordLength != maxPasswordLength) {
+        
+      }
+
 }
 
 // Choices functions
