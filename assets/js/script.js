@@ -21,7 +21,6 @@ var promptMessage = "Do you want to include";
 var promptInput = "characters? Please enter Y or N:";
 var minPasswordLength = 8;
 var maxPasswordLength = 128;
-var noSelectedCharAlert = "Invalid password. Please select that the password contains at least one lowercase, uppercase, numeric, or special character.";
 
 function generatePassword() {
   //Generated password initially blank
@@ -39,9 +38,14 @@ function generatePassword() {
     includeNumbers = getIncludeNumbersChoice();
     includeSpecialChar = getIncludeSpecialCharChoice();
 
-      if(passwordLength != minPasswordLength || passwordLength != maxPasswordLength) {
-        
-      }
+    for (var i = 0; i < passwordLength; i++) { 
+      generatePassword += getLowerCaseChar();
+      generatePassword += getUpperCaseChar();
+      generatePassword += getNumericChar();
+      generatePassword += getSpecialChar();
+    }
+
+    return generatePassword;
 
 }
 
@@ -73,4 +77,30 @@ function getIncludeSpecialCharChoice() {
   var userChoice = window.prompt(promptMessage + " special " + promptInput, "Y");
 
   return userChoice;
+}
+
+// Character Generators
+
+function getLowerCaseChar() {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  return alphabet[Math.floor(Math.random() * alphabet.length)];
+
+}
+function getUpperCaseChar() {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  return alphabet[Math.floor(Math.random() * alphabet.length)];
+}
+
+function getNumericChar() {
+  return Math.floor(Math.random() * 10);
+
+}
+
+function getSpecialChar() {
+  const specialChar = "!@#$%^&*(){}[]=<>/.";
+
+  return specialChar[Math.floor(Math.random() * specialChar.length)];
+  
 }
