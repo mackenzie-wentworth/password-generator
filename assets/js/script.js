@@ -33,3 +33,33 @@ function generatePassword() {
   var includeSpecialChar;
 
 }
+
+// Choices functions
+
+function getPasswordLengthChoice() {
+  var userChoice = window.prompt("Please enter password length from 8 to 128 characters:", "8");
+
+  return userChoice;
+}
+
+function getIncludeLowerCaseChoice() {
+  var userChoice = window.prompt(promptMessage + " lowercase " + promptInput, "Y");
+  return userChoice;
+}
+
+function getIncludeUpperCaseChoice() {
+  var userChoice = window.prompt(promptMessage + " uppercase " + promptInput, "Y");
+
+  return userChoice;
+}
+
+function getIncludeNumbersChoice() {
+  var userChoice = window.prompt(promptMessage + " numeric " + promptInput, "Y");
+  return userChoice;
+}
+
+function getIncludeSpecialCharChoice() {
+  var userChoice = window.prompt(promptMessage + " special " + promptInput, "Y");
+
+  return userChoice;
+}
