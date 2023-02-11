@@ -80,7 +80,7 @@ function generatePassword() {
 // Choices functions
 
 function getPasswordLengthChoice() {
-  var userChoice = window.prompt("Please enter password length from 8 to 128 characters:", "8");
+  var userChoice = window.prompt("Please enter your desired password length between 8 to 128 characters:", "8");
 
   return userChoice;
 }
