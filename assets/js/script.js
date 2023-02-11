@@ -19,6 +19,7 @@ generateBtn.addEventListener("click", writePassword);
 // My code
 var promptMessage = "Do you want to include";
 var promptInput = "characters? Please enter Y or N:";
+var invalidLengthAlert = "Invalid password. Password must be 8 to 128 characters long.";
 var noSelectedCharAlert = "Invalid password. Please select that the password contains at least one lowercase, uppercase, numeric, or special character.";
 var minPasswordLength = 8;
 var maxPasswordLength = 128;
@@ -32,40 +33,48 @@ function generatePassword() {
   var includeNumbers;
   var includeSpecialChar;
 
-    // call functions to collect prompts
-    passwordLength = getPasswordLengthChoice();
-    includeLowerCase = getIncludeLowerCaseChoice();
-    includeUpperCase = getIncludeUpperCaseChoice();
-    includeNumbers = getIncludeNumbersChoice();
-    includeSpecialChar = getIncludeSpecialCharChoice();
+  // call functions to collect prompts
+  passwordLength = getPasswordLengthChoice();
+  includeLowerCase = getIncludeLowerCaseChoice();
+  includeUpperCase = getIncludeUpperCaseChoice();
+  includeNumbers = getIncludeNumbersChoice();
+  includeSpecialChar = getIncludeSpecialCharChoice();
 
-    
+  //First if statement to check if the password length is 8 to 128 characters long
+  if (passwordLength < minPasswordLength || passwordLength > maxPasswordLength) {
+    alert(invalidLengthAlert);
+
+  } else {
     // for loop for password concatenation
-    for (var i = 0; i < passwordLength; i++) { 
+    for (var i = 0; i < passwordLength; i++) {
       // first check if at least one character was selected if not then alert the user that they need to select at least one
-      if(includeLowerCase === "N" && includeUpperCase === "N" && includeNumbers === "N" && includeSpecialChar === "N") {
+      if (includeLowerCase === "N" && includeUpperCase === "N" && includeNumbers === "N" && includeSpecialChar === "N") {
         alert(noSelectedCharAlert);
         break;
       } else {
-      if (includeLowerCase === "Y") {
-        generatePassword += getLowerCaseChar();
-      }
-      if (includeUpperCase === "Y") {
-        generatePassword += getUpperCaseChar();
-      }
-      if (includeNumbers === "Y") {
-        generatePassword += getNumericChar();
-      }
-      if (includeSpecialChar === "Y") {
-        generatePassword += getSpecialChar();
+        if (includeLowerCase === "Y") {
+          generatePassword += getLowerCaseChar();
+        }
+        if (includeUpperCase === "Y") {
+          generatePassword += getUpperCaseChar();
+        }
+        if (includeNumbers === "Y") {
+          generatePassword += getNumericChar();
+        }
+        if (includeSpecialChar === "Y") {
+          generatePassword += getSpecialChar();
+        }
+
       }
 
     }
-    
-    }
 
-    return generatePassword;
+  }
 
+  // resultPassword to slice the generated password with selected choices
+  const resultPassword = generatePassword.slice(0, passwordLength);
+
+  return resultPassword;
 }
 
 // Choices functions
@@ -121,5 +130,5 @@ function getSpecialChar() {
   const specialChar = "!@#$%^&*(){}[]=<>/.";
 
   return specialChar[Math.floor(Math.random() * specialChar.length)];
-  
+
 }
