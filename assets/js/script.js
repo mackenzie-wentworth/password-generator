@@ -19,6 +19,7 @@ generateBtn.addEventListener("click", writePassword);
 // My code
 var promptMessage = "Do you want to include";
 var promptInput = "characters? Please enter Y or N:";
+var noSelectedCharAlert = "Invalid password. Please select that the password contains at least one lowercase, uppercase, numeric, or special character.";
 var minPasswordLength = 8;
 var maxPasswordLength = 128;
 
@@ -38,8 +39,14 @@ function generatePassword() {
     includeNumbers = getIncludeNumbersChoice();
     includeSpecialChar = getIncludeSpecialCharChoice();
 
+    
     // for loop for password concatenation
     for (var i = 0; i < passwordLength; i++) { 
+      // first check if at least one character was selected if not then alert the user that they need to select at least one
+      if(includeLowerCase === "N" && includeUpperCase === "N" && includeNumbers === "N" && includeSpecialChar === "N") {
+        alert(noSelectedCharAlert);
+        break;
+      } else {
       if (includeLowerCase === "Y") {
         generatePassword += getLowerCaseChar();
       }
@@ -52,6 +59,8 @@ function generatePassword() {
       if (includeSpecialChar === "Y") {
         generatePassword += getSpecialChar();
       }
+
+    }
     
     }
 
