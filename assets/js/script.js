@@ -38,8 +38,11 @@ function generatePassword() {
     includeNumbers = getIncludeNumbersChoice();
     includeSpecialChar = getIncludeSpecialCharChoice();
 
+    // for loop for password concatenation
     for (var i = 0; i < passwordLength; i++) { 
-      generatePassword += getLowerCaseChar();
+      if (includeLowerCase === "Y") {
+        generatePassword += getLowerCaseChar();
+      }
       generatePassword += getUpperCaseChar();
       generatePassword += getNumericChar();
       generatePassword += getSpecialChar();
