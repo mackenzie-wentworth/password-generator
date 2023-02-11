@@ -43,9 +43,16 @@ function generatePassword() {
       if (includeLowerCase === "Y") {
         generatePassword += getLowerCaseChar();
       }
-      generatePassword += getUpperCaseChar();
-      generatePassword += getNumericChar();
-      generatePassword += getSpecialChar();
+      if (includeUpperCase === "Y") {
+        generatePassword += getUpperCaseChar();
+      }
+      if (includeNumbers === "Y") {
+        generatePassword += getNumericChar();
+      }
+      if (includeSpecialChar === "Y") {
+        generatePassword += getSpecialChar();
+      }
+    
     }
 
     return generatePassword;
