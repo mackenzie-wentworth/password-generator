@@ -1,9 +1,9 @@
 # Using JavaScript to Create a Password Generator
 
 
-## Deployed Webpage
+## Deployed Webpage 
 
-Link to deployed web application: 
+Link to deployed web application: https://mackenzie-wentworth.github.io/password-generator/
 
 
 ## The Task
