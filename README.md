@@ -1,9 +1,9 @@
 # Using JavaScript to Create a Password Generator
 
 
-## Deployed Webpage
+## Deployed Webpage 
 
-Link to deployed web application: 
+Link to deployed web application: https://mackenzie-wentworth.github.io/password-generator/
 
 
 ## The Task
@@ -22,3 +22,9 @@ The following image shows the appearance of the web application upon entering th
 
 ![An image of the beginning screen when a user enters the web page for the Password Generator.](./assets/images/deployed-password-generator-webpage.png)
 
+
+## Mock-Up
+
+The following image displays the web application's homescreen appearance before a user starts the JavaScript Coding Quiz Challenge.
+
+![An image of the beginning screen when a user enters the web application for the JavaScript Coding Quiz Challenge.](./assets/images/deployed-password-generator-webpage.png)
