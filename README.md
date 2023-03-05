@@ -21,10 +21,3 @@ Given a starter code, I used JavaScript to create a password generator to ensure
 The following image shows the appearance of the web application upon entering the Password Generator within a browser:
 
 ![An image of the beginning screen when a user enters the web page for the Password Generator.](./assets/images/deployed-password-generator-webpage.png)
-
-
-## Mock-Up
-
-The following image displays the web application's homescreen appearance before a user starts the JavaScript Coding Quiz Challenge.
-
-![An image of the beginning screen when a user enters the web application for the JavaScript Coding Quiz Challenge.](./assets/images/deployed-password-generator-webpage.png)
